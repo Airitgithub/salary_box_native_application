@@ -18,4 +18,20 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// ✅ Add Group and Version Here
+group = "com.salarybox" 
+version = "1.0.0"
+
+subprojects {
+    group = "com.salarybox"
+    version = "1.0.0"
+}
 apply plugin: "com.facebook.react.rootproject"
+
