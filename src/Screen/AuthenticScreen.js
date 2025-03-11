@@ -14,12 +14,13 @@ import { COLORS } from '../Components/Color';
 import fontFamily from '../Components/fontfamily';
 import CustomVectorIcons from '../Components/CustomVectorIcons';
 
+
 const AuthenticScreen = ({ navigation }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
     const [password, setPassword] = useState('');
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+// abdie this side
     const handleNext = () => {
         // Phone Number Validation
         if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
