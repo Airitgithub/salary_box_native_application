@@ -11,12 +11,20 @@ import NotificationScreen from '../Screen/NotificationScreen';
 import RequestLeaveScreen from '../Screen/RequestLeaveScreen';
 import ViewAttendanceScreen from '../Screen/ViewAttendanceScreen';
 import ProfileScreenDetail from '../Screen/ProfileScreenDetail';
+import PersonalDetails from '../Screen/PersonalDetailsScreen';
+import PersonalDetailsScreen from '../Screen/PersonalDetailsScreen';
+import CurrentEmlpoymentScreen from '../Screen/CurrentEmlpoymentScreen';
+import AttandanceDetailsScreen from '../Screen/AttandanceDetailsScreen';
+import MoreSettingsScreen from '../Screen/MoreSettingsScreen';
+import BankDetailsScreen from '../Screen/BankDetailsScreen';
+import HolidayListScreen from '../Screen/HolidayListScreen';
+import NoteScreen from '../Screen/NoteScreen';
 const Stack = createStackNavigator();
 
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
+      <Stack.Navigator initialRouteName="BottomTabNavigator">
         <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AuthenticScreen" component={AuthenticScreen} options={{ headerShown: false }} />
         <Stack.Screen name="LoginPinScreen" component={LoginPinScreen} options={{ headerShown: false }} />
@@ -27,6 +35,13 @@ const Routes = () => {
         <Stack.Screen name="RequestLeaveScreen" component={RequestLeaveScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ViewAttendanceScreen" component={ViewAttendanceScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ProfileScreenDetail" component={ProfileScreenDetail} options={{ headerShown: false }} />
+        <Stack.Screen name="PersonalDetailsScreen" component={PersonalDetailsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="CurrentEmlpoymentScreen" component={CurrentEmlpoymentScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="AttandanceDetailsScreen" component={AttandanceDetailsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MoreSettingsScreen" component={MoreSettingsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="BankDetailsScreen" component={BankDetailsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="HolidayListScreen" component={HolidayListScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="NoteScreen" component={NoteScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

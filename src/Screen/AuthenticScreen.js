@@ -13,28 +13,33 @@ import { IMAGES } from '../Components/Images';
 import { COLORS } from '../Components/Color';
 import fontFamily from '../Components/fontfamily';
 import CustomVectorIcons from '../Components/CustomVectorIcons';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
 
 const AuthenticScreen = ({ navigation }) => {
     const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    const handleNext = () => {
-        // Phone Number Validation
-        if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
-            Toast.show({
-                type: 'error',
-                text1: 'Invalid Phone Number',
-                text2: 'Enter a valid 10-digit phone number',
-                position: 'top',
-                visibilityTime: 3000,
-                topOffset: 50,
-                style: { backgroundColor: COLORS.red },
-            });
-            return;
-        }
+    const validationSchema = Yup.object().shape({
+        phoneNumber: Yup.string()
+            .matches(/^\d{10}$/, 'Enter a valid 10-digit phone number')
+            .required('Phone number is required'),
+        password: Yup.string()
+            .min(6, 'Password must be at least 6 characters long')
+            .required('Password is required'),
+    });
 
-        // Password Validation
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(password)) {
+    const handleNext = async (values) => {
+        try {
+            // Simulate API call
+            await axios.post('https://example.com/api/verify', values);
+            setIsSuccessModalVisible(true);
+            setTimeout(() => {
+                setIsSuccessModalVisible(false);
+                navigation.navigate("LoginPinScreen", { phoneNumber: values.phoneNumber });
+            }, 2000);
+        } catch (error) {
             Toast.show({
                 type: 'error',
                 text1: 'Error',

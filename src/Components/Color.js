@@ -14,5 +14,6 @@ export const COLORS={
     green:"#006400",
     purple:"#4B0082",
     IconColor:"#1976d2",
-    backGroundIcon:"#cfe8ff"
+    backGroundIcon:"#cfe8ff",
+    ScreenColor:"#f0f0f0"
 }

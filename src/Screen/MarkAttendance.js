@@ -64,11 +64,11 @@ const MarkAttendance = ({ navigation }) => {
       <View style={{ borderBottomWidth: 2, borderBottomColor: COLORS.red, width: "100%" }}></View>
 
       {/* Camera View */}
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={{justifyContent: "center", alignItems: "center",marginTop:100 }}>
         {device && hasPermission ? (
           <Camera
             ref={cameraRef}
-            style={{ width: 300, height: 400, borderRadius: 20 }}
+            style={{ width: 300, height: 400 }}
             device={device}
             isActive={true}
             photo={true}
